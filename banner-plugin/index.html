@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>YaroDemo</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>Yaro——原生js图片实现碎片轮播图切换特效</h1>
+			
+		</header>
+		<div class="banner" id="banner1" style="margin: 50px auto;">
+			<div class="banner-view"></div>
+			<div class="banner-btn"></div>
+			<div class="banner-number"></div>
+			<div class="banner-progres"></div>
+		</div>
+
+		<div class="banner" id="banner2" style="margin: 50px auto;">
+			<div class="banner-view"></div>
+			<div class="banner-btn"></div>
+			<div class="banner-number"></div>
+			<div class="banner-progres"></div>
+		</div>
+
+	</div>
+	
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+		var banner = new FragmentBanner({
+			container : "#banner1",//选择容器 必选
+			imgs : ['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/5.jpg'],//图片集合 必选
+			size : {
+				width : 1000,
+				height : 560
+			},//容器的大小 可选
+			//行数与列数 可选
+			grid : {
+				line : 12,
+				list : 14
+			},
+			index: 0,//图片集合的索引位置 可选
+			type : 2,//切换类型 1 ， 2 可选
+			boxTime : 5000,//小方块来回运动的时长 可选
+			fnTime : 10000//banner切换的时长 可选
+		});
+			
+		/*
+		** 只填两个必要参数也是可以的
+		*/
+		var banenr2 = new FragmentBanner({
+			container : "#banner2",//选择容器 必选
+			imgs : ['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/5.jpg'],//图片集合 
+		});
+	</script>
+</body>
+</html>
